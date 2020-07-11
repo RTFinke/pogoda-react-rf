@@ -8,12 +8,9 @@ class App extends React.Component {
   state = {
     city: undefined,
 
-    // days contains objects with the following properties:
-    // date, weather_desc, icon, temp
     days: new Array(5)
   };
 
-  // creates the day objects and updates the state
   updateState = data => {
     const city = data.city.name;
     const days = [];
@@ -34,7 +31,8 @@ class App extends React.Component {
     });
   };
 
-  // tries to make an API call with the given city name and triggers state update
+  // wysyła zapytanie do api wraz z nazwą miasta
+
   makeApiCall = async city => {
     const api_data = await fetch(
       `https://api.openweathermap.org/data/2.5/forecast?q=${city}&APPID=6557810176c36fac5f0db536711a6c52`
@@ -46,8 +44,7 @@ class App extends React.Component {
     } else return false;
   };
 
-  // returns array with Indices of the next five days in the list
-  // from the API data (every day at 12:00 pm)
+  // zwraca tablice z lista następnych piceiu dni z Api (nowe dane są codziennie o 12 czasu gm)
   getDayIndices = data => {
     let dayIndices = [];
     dayIndices.push(0);

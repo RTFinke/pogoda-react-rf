@@ -5,13 +5,13 @@ export default class WeatherBox extends React.Component {
   // returns weekday to a given Date value
   getDay = date => {
     let weekday = new Array(7);
-    weekday[0] = 'Sunday';
-    weekday[1] = 'Monday';
-    weekday[2] = 'Tuesday';
-    weekday[3] = 'Wednesday';
-    weekday[4] = 'Thursday';
-    weekday[5] = 'Friday';
-    weekday[6] = 'Saturday';
+    weekday[0] = 'Niedziela';
+    weekday[1] = 'Poniedzialek';
+    weekday[2] = 'Wtorek';
+    weekday[3] = 'Środa';
+    weekday[4] = 'Czwartek';
+    weekday[5] = 'Piątek';
+    weekday[6] = 'Sobota';
 
     return weekday[new Date(date).getDay()];
   };

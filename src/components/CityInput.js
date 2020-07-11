@@ -13,10 +13,10 @@ export default class CityInput extends React.Component {
         if (/^[a-zA-ZäöüÄÖÜß ]+$/.test(city)) {
           e.target.classList.add('loading');
 
-          if (await this.props.makeApiCall(city)) e.target.placeholder = 'Enter a City...';
-          else e.target.placeholder = 'City was not found, try again...';
-        } else e.target.placeholder = 'Please enter a valid city name...';
-        e.target.classList.remove('loading');
+          if (await this.props.makeApiCall(city)) e.target.placeholder = 'Wybierz miasto...';
+          else e.target.placeholder = 'Miejscowosci nie znaleziono, wybierz ponownie...';
+        } else e.target.placeholder = 'Wybierz poprawną nazwę...';
+        e.target.classList.remove('ładowanie');
         e.target.value = '';
       }
     };
@@ -39,7 +39,7 @@ export default class CityInput extends React.Component {
         className='city-input'
         style={style}
         type='text'
-        placeholder='Enter a City...'
+        placeholder='Wpisz miejscowość...'
         onKeyPress={onKlickHandler}
       />
     );
